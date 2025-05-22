@@ -27,6 +27,10 @@ A collaborative real-time code editor built with the **MERN stack** and **Socket
 - npm install
 - cd ..
 - npm run dev
+- **OR**
+- npm run build
+- npm run dev
+- 
 
 
 
