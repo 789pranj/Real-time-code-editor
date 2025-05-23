@@ -30,7 +30,9 @@ A collaborative real-time code editor built with the **MERN stack** and **Socket
 - **OR**
 - npm run build
 - npm run dev
-- 
 
+
+### See it live
+- https://real-time-code-editor-frontend-hf9j.onrender.com/
 
 
