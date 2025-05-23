@@ -54,7 +54,7 @@ button {
   transition: background-color 0.3s ease;
   margin-top: 10px;
 }
-  
+
 button:hover {
   background-color: #218838;
 }
@@ -62,104 +62,152 @@ button:hover {
 .editor-container {
   display: flex;
   height: 100vh;
+  flex-direction: row;
+}
 
-  .sidebar {
-    width: 250px;
-    padding: 1.5rem;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+.editor-container .sidebar {
+  width: 250px;
+  padding: 1.5rem;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  overflow-y: auto;
+}
 
-    .room-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1rem;
+.editor-container .sidebar .room-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 
-      h2 {
-        margin-bottom: 1rem;
-        font-size: 1rem;
-      }
+.editor-container .sidebar .room-info h2 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
 
-      .copy-button {
-        padding: 0.5rem 1rem;
-        background-color: 3498db;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+.editor-container .sidebar .room-info .copy-button {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-        transition: background-color 0.3s ease;
+.editor-container .sidebar .room-info .copy-button:hover {
+  background-color: #2980b9;
+}
 
-        &:hover {
-          background-color: #2980b9;
-        }
-      }
+.editor-container .sidebar .room-info .copy-successs {
+  margin-left: 0.5rem;
+  color: rgb(38, 167, 38);
+  font-size: 0.8rem;
+}
 
-      .copy-successs {
-        margin-left: 0.5rem;
-        color: rgb(38, 167, 38);
-        font-size: .8rem;
+.editor-container .sidebar h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
 
-      }
-    }
+.editor-container .sidebar ul {
+  list-style: none;
+}
 
-    h3 {
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
+.editor-container .sidebar ul li {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background: gray;
+  margin-top: 5px;
+  border-radius: 5px;
+}
 
-    ul {
-      list-style: none;
-      li {
-        padding: 0.5rem;
-        font-size: .9rem;
-        background: gray;
-        margin-top: 5px;
-        border-radius: 5px;
-      }
-    }
+.editor-container .sidebar .typing-indecator {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: white;
+}
 
-    .typing-indecator {
-      margin-top: 1rem;
-      font-size: 1rem;
-      color: white;
-    }
+.editor-container .sidebar .language-selector {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #34459e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
 
-    .language-selector {
-      margin-top: 1rem;
-      width: 100%;
-      padding: .5rem;
-      background-color: #34459e;
-      color: white;
-      border: none;
-      border-radius: 4px;
-    }
+.editor-container .sidebar .leave-button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    .leave-button {
-      margin-top: 1rem;
-      width: 100%;
-      padding: 0.75rem;
-      background-color: orange;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 1rem;
-      cursor: pointer;
+.editor-container .sidebar .leave-button:hover {
+  background-color: #ab2a1c;
+}
 
-      transition: background-color 0.3s ease;
+.editor-container .editor-wrapper {
+  flex-grow: 1;
+  background-color: #fff;
+}
 
-      &:hover {
-        background-color: #ab2a1c;
-      }
-    }
+/* RESPONSIVE STYLES */
+
+@media (max-width: 768px) {
+  .editor-container {
+    flex-direction: column;
+    height: auto;
   }
 
-  .editor-wrapper {
-    flex-grow: 1;
-    background-color: #fff;
+  .editor-container .sidebar {
+    width: 100%;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .editor-container .editor-wrapper {
+    height: 60vh;
+  }
+
+  .join-container {
+    padding: 1rem;
+  }
+
+  .join-form {
+    width: 100%;
+  }
+
+  input,
+  button,
+  select.language-selector {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+
+  ul li {
+    font-size: 1rem;
+    padding: 0.75rem;
   }
 }
 
+@media (max-width: 400px) {
+  .editor-container .editor-wrapper {
+    height: 50vh;
+  }
 
+  button {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
